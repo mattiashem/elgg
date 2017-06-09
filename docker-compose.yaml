@@ -1,0 +1,17 @@
+version: '2'
+services:
+  elgg:
+    image: mattiashem/elgg
+    build: elgg/.
+    links:
+      - mysql
+    ports:
+      - 80:80
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=mattes
+      - MYSQL_DATABASE=elgg
+      - MYSQL_USER=elgg_user
+      - MYSQL_PASSWORD=elgg_pass22
+
